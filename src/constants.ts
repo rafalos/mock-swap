@@ -35,4 +35,11 @@ export const cons: Con[] = [
   },
 ];
 
+export const galleryPerks = [
+  {
+    title: 'Authorised and Regulated',
+    content: 'At XM, we adhere to all regulatory standards and are fully authorised and regulated by FSC.',
+  }
+]
+
 export const tickerUrl = 'https://api.coinlore.net/api/tickers/';
