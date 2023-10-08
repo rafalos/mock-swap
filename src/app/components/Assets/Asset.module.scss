@@ -1,0 +1,45 @@
+.asset {
+  border-radius: 0.81694rem;
+  margin: 10px;
+  border: 0.871px solid rgba(167, 167, 167, 0.2);
+  background: rgba(140, 140, 140, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem 1.5rem;
+  &__metadata {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__badge {
+    border-radius: 0.21788rem;
+    background: #fff8d6;
+    color: #000;
+    text-shadow: 0px 0px 60.124969482421875px #ffc255;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.49013rem;
+    text-transform: uppercase;
+    padding: 4px 8px;
+  }
+  &__price {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    &--positive {
+      color: #B1FFC2;
+    }
+    &--negative {
+      color: #FFA3A6;
+    }
+  }
+}
+
+.divider {
+  width: 12.8125rem;
+  height: 0.0625rem;
+  flex-shrink: 0;
+  opacity: 0.15;
+  background: #fff;
+}

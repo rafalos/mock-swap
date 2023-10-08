@@ -1,0 +1,10 @@
+.con {
+  border-radius: 0.625rem;
+  background: #0b0819;
+  backdrop-filter: blur(45px);
+
+  &__head {
+    display: flex;
+    font-size: 1.25rem;
+  }
+}
