@@ -13,6 +13,8 @@
 }
 
 body {
+  display: grid;
+  grid-template-rows: 7rem 1fr 20rem;
   background: #201d27;
 }
 
@@ -21,6 +23,10 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
