@@ -12,7 +12,7 @@ export interface CryptoAsset {
 export interface Con {
   title: string;
   description: string;
-  icon: string;
+  icon: StaticImageData;
 }
 
 export interface Perk {

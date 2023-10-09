@@ -9,11 +9,16 @@ type Props = {
   onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 };
 
-const Button = ({ title, onClick }: Props) => {
+const Button = ({
+  title,
+  onClick,
+  ...rest
+}: Props & React.ComponentPropsWithoutRef<'button'>) => {
   return (
     <button
       className={`${berbasNeue.className} ${styles.button}`}
       onClick={onClick}
+      {...rest}
     >
       {title}
     </button>

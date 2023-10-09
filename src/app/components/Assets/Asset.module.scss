@@ -1,4 +1,11 @@
+.assets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .asset {
+  width: 15.75rem;
   border-radius: 0.81694rem;
   margin: 10px;
   border: 0.871px solid rgba(167, 167, 167, 0.2);
@@ -9,7 +16,7 @@
   padding: 1rem 1.5rem;
   &__metadata {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
     align-items: center;
   }
   &__badge {

@@ -6,7 +6,7 @@ export const berbasNeue = Bebas_Neue({
 });
 
 export const roboto = Roboto({
-  weight: ['300', '400', '700'],
+  weight: ['300', '400', '500', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
 });

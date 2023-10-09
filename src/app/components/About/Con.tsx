@@ -12,10 +12,9 @@ const Con = ({ description, icon, title }: Con) => {
     <div className={styles.con}>
       <Image
         className={styles['con__icon']}
-        src={`/${icon}.png`}
-        width={25}
-        height={25}
+        src={icon}
         alt='test'
+        height={64}
       />
       <div className={styles['con__head']}>
         <h3>{title}</h3>

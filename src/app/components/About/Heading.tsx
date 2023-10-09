@@ -7,9 +7,9 @@ const Divider = () => <div className={styles['cons__divider']}></div>;
 
 const Header = (props: Props) => {
   return (
-    <div className={styles['cons__heading']}>
+    <div className={styles['about__heading']}>
       <h2>
-        Why <strong>Trade</strong><br></br> with XM?
+        Why <strong>Trade</strong> with XM?
       </h2>
       <Divider />
       <p>

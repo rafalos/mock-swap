@@ -1,10 +1,14 @@
-.cons {
+@import '../../device-mixin.scss';
+
+.about {
+  max-width: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1.5rem;
   &__heading {
+    max-width: 800px;
+    margin-bottom: 2rem;
     h2 {
       font-size: 2rem;
       font-style: normal;
@@ -22,5 +26,16 @@
     width: 4.375rem;
     height: 0.125rem;
     background: #29a643;
+  }
+  &__cons {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    @include devices(desktop) {
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: .8rem;
+    }
   }
 }

@@ -4,6 +4,10 @@ import PerkProtect from '../public/perk-protect.png';
 import PerkSupport from '../public/perk-support.png';
 import PerkTeam from '../public/perk-team.png';
 import EventImage from '../public/event.svg';
+import FastExecusion from '../public/fast-execusion-icon.png';
+import CompetitivePricing from '../public/competitive-pricing-icon.png';
+import Tech from '../public/tech-icon.png';
+import Dollar from '../public/dollar-icon.png';
 
 export const assetsToFetch = [
   'bitcoin',
@@ -18,25 +22,25 @@ export const cons: Con[] = [
     title: 'Superior Trade Execution',
     description:
       '99% of trades are executed in less than a second, with no requotes or rejections.',
-    icon: 'fast-execusion-icon',
+    icon: FastExecusion,
   },
   {
     title: 'Competitive Pricing',
     description:
       'We offer some of the lowest spreads and we don’t charge commissions.',
-    icon: 'competitive-pricing-icon',
+    icon: CompetitivePricing,
   },
   {
     title: 'Advanced Technology',
     description:
       '99% of trades are executed in less than a second, with no requotes or rejections.',
-    icon: 'tech-icon',
+    icon: Tech,
   },
   {
     title: 'Start with $5',
     description:
       'Start trading your preferred instruments with as little as a $5 minimum deposit.',
-    icon: 'dollar-icon',
+    icon: Dollar,
   },
 ];
 
