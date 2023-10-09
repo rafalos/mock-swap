@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import styles from './Asset.module.scss';
 import { CryptoAsset } from '@/app/types';
 import Image from 'next/image';
+import { FaChevronCircleUp } from 'react-icons/fa';
+import { FaChevronCircleDown } from 'react-icons/fa';
 
 const Divider = () => <div className={styles.divider}></div>;
 
@@ -12,8 +14,9 @@ const Asset = ({
   price_usd,
   percent_change_24h,
 }: CryptoAsset) => {
-  const tickerClass =
-    Math.sign(+percent_change_24h) >= 0 ? 'positive' : 'negative';
+  const tickerPositive = Math.sign(+percent_change_24h) >= 0;
+
+  const tickerClass = tickerPositive ? 'positive' : 'negative';
 
   return (
     <div className={styles.asset}>
@@ -29,8 +32,9 @@ const Asset = ({
       </div>
       <Divider />
       <div className={styles['asset__price']}>
-        <div>${price_usd}</div>
+        <div className={styles['asset__price_amount']}>${price_usd}</div>
         <div className={styles[`asset__price--${tickerClass}`]}>
+          {tickerPositive ? <FaChevronCircleUp /> : <FaChevronCircleDown />}
           {percent_change_24h}
         </div>
       </div>
