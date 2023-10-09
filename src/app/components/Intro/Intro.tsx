@@ -8,18 +8,22 @@ const Intro = () => {
     <section className={styles['intro_section']}>
       <h2>Trade with</h2>
       <h1>
-        <span>Zero Swaps</span> on All XM Ultra Low accounts for more than 25
-        instruments
+        <strong>Zero Swaps</strong> on All XM Ultra Low accounts for more than
+        25 instruments
       </h1>
       <p>
-        Enjoy spreads as low as 0.6 pips and leverage up to 1000:1 on
-        instruments like EURUSD, USDJPY, EURJPY, GBPUSD, and Gold.
+        Enjoy spreads <strong>as low as 0.6 pips</strong> and
+        <strong> leverage up to 1000:1</strong> on instruments like
+        <strong> EURUSD, USDJPY, EURJPY, GBPUSD</strong>, and
+        <strong> Gold</strong>.
       </p>
       <Button onClick={() => console.log('test')} title='Open account' />
 
       <p>New to trading? Try a Demo account</p>
 
-      <p>Terms and Conditions apply*. to read the full T&C&apos;s, click here</p>
+      <p>
+        Terms and Conditions apply*. to read the full T&C&apos;s, click here
+      </p>
     </section>
   );
 };

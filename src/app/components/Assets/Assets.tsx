@@ -31,6 +31,7 @@ const Assets = (props: Props) => {
         ({ id, nameid, name, percent_change_24h, symbol, price_usd }) => {
           return (
             <Asset
+              id={id}
               nameid={nameid}
               name={name}
               key={id}
