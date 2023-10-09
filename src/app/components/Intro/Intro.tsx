@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import styles from './Intro.module.scss';
 import Button from '../UI/Button';

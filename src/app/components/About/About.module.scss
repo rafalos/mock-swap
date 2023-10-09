@@ -4,4 +4,23 @@
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
+  &__heading {
+    h2 {
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 2.6875rem;
+    }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  &__divider {
+    width: 4.375rem;
+    height: 0.125rem;
+    background: #29a643;
+  }
 }

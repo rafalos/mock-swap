@@ -1,0 +1,46 @@
+.perks {
+  background-color: white;
+  text-align: center;
+  color: #444;
+  &__divider {
+    width: 2.5rem;
+    height: 0.25rem;
+    background: #d51820;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    h2 {
+      text-align: center;
+      font-size: 2.1875rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 3.01656rem; /* 137.899% */
+      letter-spacing: -0.04375rem;
+    }
+    span {
+      color: #d51820;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #444;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.23425rem;
+  }
+}
