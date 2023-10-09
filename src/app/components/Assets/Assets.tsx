@@ -4,30 +4,16 @@ import React, { useEffect, useState } from 'react';
 import { assetsToFetch, tickerUrl } from '../../../constants';
 import Asset from './Asset';
 import { CryptoAsset } from '@/app/types';
+import { getAllTickers } from '@/app/services/ticker';
 
-type Props = {};
+type Props = {
+  tickers: CryptoAsset[];
+};
 
-const Assets = (props: Props) => {
-  const [assetData, setAssetData] = useState<CryptoAsset[]>([]);
-
-  useEffect(() => {
-    const fetchAssetData = async () => {
-      const response = await fetch(tickerUrl);
-      const { data } = await response.json();
-
-      const assetsToRender = data.filter((asset: CryptoAsset) =>
-        assetsToFetch.includes(asset.nameid)
-      );
-
-      setAssetData(assetsToRender);
-    };
-
-    fetchAssetData();
-  }, []);
-
+const Assets = ({ tickers }: Props) => {
   return (
     <section>
-      {assetData.map(
+      {tickers.map(
         ({ id, nameid, name, percent_change_24h, symbol, price_usd }) => {
           return (
             <Asset
