@@ -10,6 +10,7 @@ import Perks from './components/Perks/Perks';
 import { assetsToFetch } from '@/constants';
 import { getAllTickers } from './services/ticker';
 import { CryptoAsset } from './types';
+import PasswordField from './components/UI/PasswordField';
 
 async function getTickers() {
   const data = await getAllTickers();
@@ -26,6 +27,7 @@ export default async function Home() {
 
   return (
     <>
+      <PasswordField />
       <Header />
       <main className={styles.main}>
         <Intro />

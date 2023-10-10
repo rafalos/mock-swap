@@ -6,7 +6,7 @@ import { berbasNeue } from '@/app/fonts';
 
 type Props = {
   title: string;
-  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const Button = ({
