@@ -1,3 +1,5 @@
+@import '../../device-mixin.scss';
+
 .intro_section {
   display: flex;
   flex-direction: column;
@@ -24,5 +26,11 @@
     line-height: 2.46875rem;
     letter-spacing: 0.0625rem;
     text-transform: uppercase;
+  }
+
+  p {
+    @include devices(tablet) {
+      max-width: 35rem;
+    }
   }
 }

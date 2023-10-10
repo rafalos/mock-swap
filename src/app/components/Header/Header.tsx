@@ -6,6 +6,10 @@ const Header = () => {
   return (
     <nav className={styles.navbar}>
       <Image src='/logo.png' alt='test' width={140} height={50} />
+      <ul className={styles['navbar__links']}>
+        <li>XM Homepage</li>
+        <li>Support</li>
+      </ul>
     </nav>
   );
 };

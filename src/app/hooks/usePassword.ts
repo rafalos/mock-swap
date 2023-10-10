@@ -48,6 +48,7 @@ export const usePassword = () => {
 
   return {
     setIsTouched,
+    isTouched,
     value,
     setValue,
     validatorState,

@@ -20,3 +20,10 @@ export interface Perk {
   description: string;
   icon: StaticImageData;
 }
+
+export interface User {
+  fullName: string;
+  date: string;
+  email: string;
+  password: string;
+}

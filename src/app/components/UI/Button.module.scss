@@ -1,3 +1,5 @@
+@import '../../device-mixin.scss';
+
 .button {
   min-width: 290px;
   height: 40px;
@@ -8,4 +10,13 @@
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+  @include devices(desktop) {
+    max-width: 21.5rem;
+  }
+
+  &--disabled {
+    background-color: #CCC;
+    color: white;
+    cursor: not-allowed;
+  }
 }

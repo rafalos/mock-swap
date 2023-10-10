@@ -12,11 +12,15 @@ type Props = {
 const Button = ({
   title,
   onClick,
+  disabled,
   ...rest
 }: Props & React.ComponentPropsWithoutRef<'button'>) => {
   return (
     <button
-      className={`${berbasNeue.className} ${styles.button}`}
+      disabled={disabled}
+      className={`${berbasNeue.className} ${styles.button} ${
+        disabled ? styles['button--disabled'] : null
+      }`}
       onClick={onClick}
       {...rest}
     >

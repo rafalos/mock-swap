@@ -1,6 +1,9 @@
+@import '../../device-mixin.scss';
+
 .footer {
   background-color: black;
   display: flex;
+  height: 14rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -8,7 +11,15 @@
   color: #888;
   font-size: 0.75rem;
   line-height: 1.07144rem;
-
+  @include devices(desktop) {
+    flex-direction: column;
+  }
+  @include devices(tablet) {
+    flex-direction: row;
+    height: 10rem;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
   &__links {
     display: flex;
     gap: 1rem;

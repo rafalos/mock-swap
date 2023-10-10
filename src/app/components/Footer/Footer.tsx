@@ -2,9 +2,7 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import Image from 'next/image';
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>

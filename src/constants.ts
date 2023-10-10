@@ -78,6 +78,18 @@ export const events = [
   },
   {
     image: EventImage,
+    alt: 'This is picture of sample event #1',
+  },
+  {
+    image: EventImage,
+    alt: 'This is picture of sample event #1',
+  },
+  {
+    image: EventImage,
+    alt: 'This is picture of sample event #1',
+  },
+  {
+    image: EventImage,
     alt: 'This is picture of sample event #2',
   },
 ];

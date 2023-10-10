@@ -22,7 +22,7 @@ const Intro = () => {
         <p>New to trading? Try a Demo account.</p>
 
         <p>
-          Terms and Conditions apply*. to read the full T&C&apos;s, click here.
+          Terms and Conditions apply<span className='text-red'>*</span>. to read the full T&C&apos;s, <span className='text-red'>click here</span>.
         </p>
       </div>
     </section>
