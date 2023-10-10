@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import styles from './Intro.module.scss';
 import Button from '../UI/Button';
@@ -18,7 +17,7 @@ const Intro = () => {
           <strong> EURUSD, USDJPY, EURJPY, GBPUSD</strong>, and
           <strong> Gold</strong>.
         </p>
-        <Button onClick={() => console.log('test')} title='Open account' />
+        <Button title='Open account' />
 
         <p>New to trading? Try a Demo account.</p>
 

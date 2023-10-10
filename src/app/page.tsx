@@ -27,7 +27,6 @@ export default async function Home() {
 
   return (
     <>
-      <PasswordField />
       <Header />
       <main className={styles.main}>
         <Intro />

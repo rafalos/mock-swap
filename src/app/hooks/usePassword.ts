@@ -15,6 +15,7 @@ interface validatorState {
 }
 
 export const usePassword = () => {
+  const [value, setValue] = useState('')
   const [validatorState, setValidatorState] = useState<validatorState>({
     upperCaseValid: false,
     lowerCaseValid: false,
@@ -48,6 +49,8 @@ export const usePassword = () => {
   };
 
   return {
+    value,
+    setValue,
     validatorState,
     handleValidate,
     isValid,

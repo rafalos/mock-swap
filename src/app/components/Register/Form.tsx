@@ -2,13 +2,15 @@
 import React, { useState } from 'react';
 import Button from '../UI/Button';
 import styles from './Form.module.scss';
+import PasswordField from '../UI/PasswordField';
+import { usePassword } from '@/app/hooks/usePassword';
 
 const Form = () => {
   const [formIsValid, setFormIsValid] = useState(false);
   const [date, setDate] = useState(new Date().toLocaleDateString('fr-FR'));
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { value, setValue } = usePassword();
 
   const registerEnabled = !!formIsValid;
 
@@ -35,11 +37,16 @@ const Form = () => {
         value={email}
       />
       <label>Password</label>
-      <input
-        type='password'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <label htmlFor=''>
+        <input
+          type='password'
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <div>
+          p
+        </div>
+      </label>
       <Button
         onClick={(e) => console.log(e)}
         title='Continue'
