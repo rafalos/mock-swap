@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
-
-const upperCase = /[A-Z]/;
-const lowerCase = /[a-z]+/;
-const special = /[*@!#%&()^~{}]+/;
-const range = /^.{8,15}$/;
-const digit = /\d/;
+import {
+  validatePasswordUppercase,
+  validatePasswordLowercase,
+  validatePasswordNumberExistence,
+  validatePasswordSpecialCharacter,
+  validatePasswordLength,
+} from '../validations';
 
 interface validatorState {
   upperCaseValid: boolean;
@@ -15,7 +16,7 @@ interface validatorState {
 }
 
 export const usePassword = () => {
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState('');
   const [validatorState, setValidatorState] = useState<validatorState>({
     upperCaseValid: false,
     lowerCaseValid: false,
@@ -23,32 +24,30 @@ export const usePassword = () => {
     specialValid: false,
     range: false,
   });
-  const [isValid, setIsValid] = useState(true);
-  const checkValidation = useCallback(() => {
-    for (const key in validatorState) {
-      if (!validatorState[key]) {
-        setIsValid(false);
-      }
-    }
-  }, [validatorState]);
+  const [isTouched, setIsTouched] = useState(false);
+
+  const isLocalValid = Object.values(validatorState).every(
+    (validatorState) => validatorState
+  );
+
+  const isValid = isTouched && isLocalValid;
+
+  const handleValidate = useCallback(() => {
+    setValidatorState({
+      upperCaseValid: validatePasswordUppercase(value),
+      lowerCaseValid: validatePasswordLowercase(value),
+      numbersValid: validatePasswordNumberExistence(value),
+      specialValid: validatePasswordSpecialCharacter(value),
+      range: validatePasswordLength(value),
+    });
+  }, [value]);
 
   useEffect(() => {
-    checkValidation();
-  }, [validatorState, checkValidation]);
-
-  const handleValidate: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    const { value } = e.target;
-
-    setValidatorState({
-      upperCaseValid: upperCase.test(value),
-      lowerCaseValid: lowerCase.test(value),
-      numbersValid: digit.test(value),
-      specialValid: special.test(value),
-      range: range.test(value),
-    });
-  };
+    handleValidate();
+  }, [handleValidate]);
 
   return {
+    setIsTouched,
     value,
     setValue,
     validatorState,

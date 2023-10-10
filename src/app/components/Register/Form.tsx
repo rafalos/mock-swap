@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Button from '../UI/Button';
 import styles from './Form.module.scss';
-import PasswordField from '../UI/PasswordField';
 import { usePassword } from '@/app/hooks/usePassword';
 
 const Form = () => {
@@ -10,9 +9,17 @@ const Form = () => {
   const [date, setDate] = useState(new Date().toLocaleDateString('fr-FR'));
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const { value, setValue } = usePassword();
+  const {
+    validatorState,
+    value,
+    setValue,
+    setIsTouched,
+    isValid: passwordIsValid,
+  } = usePassword();
 
   const registerEnabled = !!formIsValid;
+
+  const stepTracker = [passwordIsValid];
 
   return (
     <form className={styles.form}>
@@ -41,11 +48,49 @@ const Form = () => {
         <input
           type='password'
           value={value}
+          onFocus={() => setIsTouched(true)}
           onChange={(e) => setValue(e.target.value)}
+          className={
+            styles[`form__input--${passwordIsValid ? 'valid' : 'invalid'}`]
+          }
         />
-        <div>
-          p
-        </div>
+        <ul className={styles['form__checklist']}>
+          <li
+            style={{
+              color: validatorState.range ? 'green' : 'red',
+            }}
+          >
+            8 - 15 characters
+          </li>
+          <li
+            style={{
+              color: validatorState.numbersValid ? 'green' : 'red',
+            }}
+          >
+            1 or more numbers
+          </li>
+          <li
+            style={{
+              color: validatorState.lowerCaseValid ? 'green' : 'red',
+            }}
+          >
+            1 or more lower case letters
+          </li>
+          <li
+            style={{
+              color: validatorState.upperCaseValid ? 'green' : 'red',
+            }}
+          >
+            1 or more upper case letters
+          </li>
+          <li
+            style={{
+              color: validatorState.specialValid ? 'green' : 'red',
+            }}
+          >
+            1 or more special characters (#[]()@$&*!?|,.^/\+_-)
+          </li>
+        </ul>
       </label>
       <Button
         onClick={(e) => console.log(e)}

@@ -4,4 +4,15 @@
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  &__checklist {
+    text-align: start;
+  }
+  &__input {
+    &--invalid {
+      border: 1px solid #d51820;
+    }
+    &--valid {
+      border: 1px solid #29a643;
+    }
+  }
 }
