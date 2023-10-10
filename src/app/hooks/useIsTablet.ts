@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const getIsTablet = () => window.innerWidth >= 600 && window.innerWidth <= 1200;
-
 export default function useIsTabet() {
-  const [isMobile, setIsMobile] = useState(getIsTablet());
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const onResize = () => {
-      setIsMobile(getIsTablet());
+      setIsMobile(window.innerWidth >= 600 && window.innerWidth <= 1200);
     };
 
     window.addEventListener('resize', onResize);

@@ -25,7 +25,9 @@ const Form = () => {
     return 'valid';
   };
 
-  const handleRegister = async (e) => {
+  const handleRegister = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     setCurrentStep((prev) => 3);
     e.preventDefault();
     const response = await register({
@@ -329,8 +331,14 @@ const Form = () => {
           disabled={!formIsValid}
         />
       )}
-      <p>Don’t have an account? <span className='text-red'>Create one here</span> and register for the event</p>
-      <p>Terms and Conditions apply*. To read the full T&Cs, click <span className='text-red'>here</span>.</p>
+      <p>
+        Don’t have an account? <span className='text-red'>Create one here</span>{' '}
+        and register for the event
+      </p>
+      <p>
+        Terms and Conditions apply*. To read the full T&Cs, click{' '}
+        <span className='text-red'>here</span>.
+      </p>
     </form>
   );
 };
