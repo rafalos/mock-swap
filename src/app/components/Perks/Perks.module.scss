@@ -22,12 +22,34 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 4rem;
+    @include devices(desktop) {
+      align-items: flex-start;
+    }
     h2 {
       font-size: 2.1875rem;
       font-style: normal;
       font-weight: 900;
       line-height: 3.01656rem;
       letter-spacing: -0.04375rem;
+      @include devices(tablet) {
+        color: #444;
+        text-align: center;
+        font-size: 2.61756rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 3.01656rem; /* 115.242% */
+        letter-spacing: -0.05238rem;
+      }
+      @include devices(desktop) {
+        color: #444;
+        max-width: 10rem;
+        text-align: left;
+        font-size: 5rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 5.625rem;
+        letter-spacing: -0.1rem;
+      }
     }
     span {
       color: #d51820;

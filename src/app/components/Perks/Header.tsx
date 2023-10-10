@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './Perks.module.scss';
 
-type Props = {};
-
 const Divider = () => <div className={styles['perks__divider']}></div>;
 
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <div className={styles['perks__header']}>
       <Divider />
@@ -13,8 +11,8 @@ const Header = (props: Props) => {
         Big<span>.</span> Fair<span>.</span> Human<span>.</span>
       </h2>
       <p>
-        Learn why <strong>over 5 million clients choose XM</strong> as their trusted online
-        broker.
+        Learn why <strong>over 5 million clients choose XM</strong> as their
+        trusted online broker.
       </p>
     </div>
   );

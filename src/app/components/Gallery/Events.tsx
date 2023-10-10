@@ -24,7 +24,7 @@ const Events = () => {
     <div className={styles['gallery__events']}>
       <FaChevronLeft />
       {toDisplay.map((ev) => (
-        <Image src={ev.image} alt={ev.alt} key={ev.alt} />
+        <Image src={ev.image} alt={ev.alt} key={ev.alt} height={128} width={128}/>
       ))}
       <FaChevronRight />
     </div>
