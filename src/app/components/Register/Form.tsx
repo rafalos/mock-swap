@@ -3,53 +3,78 @@ import React, { useState } from 'react';
 import Button from '../UI/Button';
 import styles from './Form.module.scss';
 import { usePassword } from '@/app/hooks/usePassword';
+import { useField } from '@/app/hooks/useField';
+import {
+  validateAge,
+  validateEmail,
+  validateFullName,
+} from '@/app/validations';
+import { parseDate } from '@/app/utils';
 
 const Form = () => {
-  const [formIsValid, setFormIsValid] = useState(false);
-  const [date, setDate] = useState(new Date().toLocaleDateString('fr-FR'));
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const {
+    isValid: fullNameIsValid,
+    setValue: setFullNameValue,
+    value: fullNameValue,
+  } = useField(validateFullName);
+
+  const {
+    isValid: dateIsValid,
+    setValue: setDateValue,
+    value: dateValue,
+  } = useField(validateAge, parseDate(new Date().toLocaleDateString('en-US')));
+
+  const {
+    isValid: emailIsValid,
+    setValue: setEmailValue,
+    value: emailValue,
+  } = useField(validateEmail);
+
   const {
     validatorState,
-    value,
-    setValue,
+    value: passwordValue,
+    setValue: setPasswordValue,
     setIsTouched,
     isValid: passwordIsValid,
   } = usePassword();
 
-  const registerEnabled = !!formIsValid;
-
   const stepTracker = [passwordIsValid];
+
+  const formIsValid =
+    fullNameIsValid && dateIsValid && emailIsValid && passwordIsValid;
 
   return (
     <form className={styles.form}>
       <label>Full name</label>
+      {!fullNameIsValid && <p>Please Enter Valid Name</p>}
       <input
         type='text'
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={fullNameValue}
+        onChange={(e) => setFullNameValue(e.target.value)}
       />
       <label>Date of birth</label>
+      {!dateIsValid && <p>Minimum age requirements, 18 years old</p>}
       <input
+        value={dateValue}
         type='date'
         onChange={(e) => {
-          const d = new Date(e.target.value).toLocaleDateString();
-          setDate(d);
+          setDateValue(e.target.value);
         }}
       />
       <label>Email</label>
+      {!emailIsValid && <p>Please Enter Valid Email</p>}
       <input
         type='email'
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
+        onChange={(e) => setEmailValue(e.target.value)}
+        value={emailValue}
       />
       <label>Password</label>
       <label htmlFor=''>
         <input
           type='password'
-          value={value}
+          value={passwordValue}
           onFocus={() => setIsTouched(true)}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => setPasswordValue(e.target.value)}
           className={
             styles[`form__input--${passwordIsValid ? 'valid' : 'invalid'}`]
           }
@@ -92,11 +117,9 @@ const Form = () => {
           </li>
         </ul>
       </label>
-      <Button
-        onClick={(e) => console.log(e)}
-        title='Continue'
-        disabled={!registerEnabled}
-      />
+      {formIsValid && (
+        <Button onClick={(e) => console.log(e)} title='Continue' />
+      )}
       <p>Don’t have an account? Create one here and register for the event</p>
       <p>Terms and Conditions apply*. To read the full T&Cs, click here.</p>
     </form>
