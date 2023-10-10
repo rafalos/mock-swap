@@ -7,7 +7,7 @@ const Success = () => {
   return (
     <div className={styles['success_box']}>
       <div className={styles['success_box__header']}>
-        <Image src={SuccessIcon} alt='Registration successfull' />
+        <Image src={SuccessIcon} alt='Registration successfull icon' />
         <h3>Registration Successful</h3>
       </div>
       <p>

@@ -73,24 +73,29 @@ export const perks: Perk[] = [
 
 export const events = [
   {
+    id: 1,
     image: EventImage,
     alt: 'This is picture of sample event #1',
   },
   {
-    image: EventImage,
-    alt: 'This is picture of sample event #1',
-  },
-  {
-    image: EventImage,
-    alt: 'This is picture of sample event #1',
-  },
-  {
-    image: EventImage,
-    alt: 'This is picture of sample event #1',
-  },
-  {
+    id: 2,
     image: EventImage,
     alt: 'This is picture of sample event #2',
+  },
+  {
+    id: 3,
+    image: EventImage,
+    alt: 'This is picture of sample event #3',
+  },
+  {
+    id: 4,
+    image: EventImage,
+    alt: 'This is picture of sample event #4',
+  },
+  {
+    id: 5,
+    image: EventImage,
+    alt: 'This is picture of sample event #5',
   },
 ];
 
