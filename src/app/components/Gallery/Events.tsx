@@ -8,11 +8,7 @@ import { events } from '@/constants';
 import useIsMobile from '@/app/hooks/useIsMobile';
 import useIsTabet from '@/app/hooks/useIsTablet';
 
-type Props = {
-  count: number;
-};
-
-const Events = ({ count }: Props) => {
+const Events = () => {
   const isMobile = useIsMobile();
   const isTablet = useIsTabet();
 
