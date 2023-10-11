@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'XM Task',
   description: 'XM task site',
+  
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 };
 

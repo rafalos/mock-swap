@@ -1,3 +1,5 @@
+@import '../../device-mixin.scss';
+
 .gallery {
   color: #252525;
   background-color: #F4F4F4;
@@ -6,6 +8,24 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  .event {
+    display: none;
+  }
+  .event:nth-child(-n+3){
+    display: list-item;
+  }
+
+  @include devices(tablet) {
+    .event:nth-child(-n+5){
+      display: list-item;
+    }
+  }
+  @include devices(desktop) {
+    .event:nth-child(-n+6){
+      display: list-item;
+    }
+  }
+
   &__events {
     display: flex;
     justify-content: center;
