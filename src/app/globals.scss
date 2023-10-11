@@ -16,6 +16,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   background: #201d27;
+  color: white;
 }
 
 ul {
@@ -54,10 +55,4 @@ section:nth-of-type(1) {
 
 .text-red {
   color: #d51820;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
