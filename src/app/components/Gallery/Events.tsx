@@ -20,8 +20,8 @@ const Events = () => {
           src={ev.image}
           alt={ev.alt}
           key={ev.alt}
-          height={114}
-          width={114}
+          height={100}
+          width={100}
         />
       ))}
       <FaChevronRight />
