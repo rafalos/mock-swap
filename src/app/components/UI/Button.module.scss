@@ -5,13 +5,14 @@
   min-width: 290px;
   height: 40px;
   cursor: pointer;
+  border: none;
   background-color: #29a643;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   @include devices(desktop) {
     max-width: 21.5rem;
   }
