@@ -1,4 +1,4 @@
-XM Recrutment task
+Just a mock crypto landing page with working client-sided form validation
 
 Live version: https://xm-task-el76.vercel.app/
 

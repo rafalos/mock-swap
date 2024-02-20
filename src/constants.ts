@@ -48,7 +48,7 @@ export const perks: Perk[] = [
   {
     title: 'Authorised and Regulated',
     description:
-      'At XM, we adhere to all regulatory standards and are fully authorised and regulated by FSC.',
+      'At MockSwap, we adhere to all regulatory standards and are fully authorised and regulated by FSC.',
     icon: PerkProtect,
   },
   {

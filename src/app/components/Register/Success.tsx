@@ -11,8 +11,8 @@ const Success = () => {
         <h3>Registration Successful</h3>
       </div>
       <p>
-        Thank you for registering for our event with XM. You will receive an
-        email shortly with confirmation of your registration.
+        Thank you for registering for our event with MockSwap. You will receive
+        an email shortly with confirmation of your registration.
       </p>
     </div>
   );

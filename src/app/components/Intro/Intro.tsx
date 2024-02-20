@@ -8,7 +8,7 @@ const Intro = () => {
       <div className={styles['intro_section']}>
         <h2>Trade with</h2>
         <h1>
-          <strong>Zero Swaps</strong> on All XM Ultra Low Accounts for more than
+          <strong>Zero Swaps</strong> on All MockSwap Ultra Low Accounts for more than
           25 instruments!
         </h1>
         <p>

@@ -9,7 +9,7 @@ const Header = (props: Props) => {
   return (
     <div className={styles['about__heading']}>
       <h2>
-        Why <strong>Trade</strong> with XM?
+        Why <strong>Trade</strong> with MockSwap?
       </h2>
       <Divider />
       <p>
