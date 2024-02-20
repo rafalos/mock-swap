@@ -1,6 +1,6 @@
 Just a mock crypto landing page with working client-sided form validation
 
-Live version: https://xm-task-el76.vercel.app/
+Live version: https://mock-swap-git-main-rafalos.vercel.app/
 
 ## Getting Started
 
